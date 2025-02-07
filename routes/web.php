@@ -3,6 +3,7 @@
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\middleware\AdminMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,6 @@ Route::middleware('auth')->group(function ()
    Route::get('/destination/show/{id}', [DestinationController::class, 'show'])->name('destination.show');
 });
 
-//Route::get('reservation', [ReservationController::class, 'index'])->middle ->name('reservation.index')
+Route::get('reservation', [ReservationController::class, 'index'])->middleware(AdminMiddleware::class) ->name('reservation.index');
 
 require __DIR__.'/auth.php';

@@ -16,8 +16,8 @@ class DestinationController extends Controller
 
     public function show($id)
     {
-        $role = Destination::find($id);
-        return view('destination.show', compact('role'));
+        $dest = Destination::find($id);
+        return view('destination.show', compact('dest'));
     }
 
 }

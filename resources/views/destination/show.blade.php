@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    @foreach ($dest as $des)
+        <ul>
+        <li>{{$des->destination}}</li>
+                <li>{{$des->price}}</li>
+                <li>{{$des->departure}}</li>
+        </ul>
+
+    @endforeach
 </body>
 </html>
