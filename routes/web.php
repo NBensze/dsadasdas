@@ -21,6 +21,9 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function ()
 {
    Route::get('/destination', [DestinationController::class, 'index'])->name('destination.index');
+   Route::get('/destination/show/{id}', [DestinationController::class, 'show'])->name('destination.show');
 });
+
+//Route::get('reservation', [ReservationController::class, 'index'])->middle ->name('reservation.index')
 
 require __DIR__.'/auth.php';

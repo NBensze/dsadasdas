@@ -14,4 +14,10 @@ class DestinationController extends Controller
         return view('destination.index', compact('Destination'));
     }
 
+    public function show($id)
+    {
+        $role = Destination::find($id);
+        return view('destination.show', compact('role'));
+    }
+
 }

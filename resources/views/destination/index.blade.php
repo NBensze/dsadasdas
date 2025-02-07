@@ -12,11 +12,10 @@
                 <li>{{$dest->price}}</li>
                 <li>{{$dest->departure}}</li>
                 @if(auth()->check() && auth()->user()->role == 'user' || auth()->user()->role == 'admin')
-                    <form action="{{ route('foglalasok.show', $foglalas->id) }}" method="GET">
+                    <form action="{{ route('destination.show', $dest->id) }}" method="GET">
                         @csrf
-                        <button type="submit">Megnézem</button>
+                        <button>button amit csak user lathat</button>
                     </form>
-
                 @endif
             </ul>
         @endforeach
